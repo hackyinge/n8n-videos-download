@@ -1,0 +1,54 @@
+{
+  "name": "哔哩哔哩视频下载",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "b73c849c-f95d-4a80-95c4-8c763bedc934",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "command": "yt-dlp --cookies /data/cookies.txt  -P \"/data/bilibili\" \"https://www.bilibili.com/video/BV1KoqVBGEay\""
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        224,
+        0
+      ],
+      "id": "c7fa147e-0ad3-4af2-bb15-3d211b06863f",
+      "name": "下载哔哩哔哩视频"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "下载哔哩哔哩视频",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": false
+  },
+  "versionId": "dd36ab26-b469-4e40-9a9c-955a0dd554c0",
+  "meta": {
+    "instanceId": "9e2aeebdfe96cc8092c91859ed8c0bcd24b688d8bb3df8ce764fcd977fe2a4b3"
+  },
+  "id": "qmI5jCmVz5DkjCVh",
+  "tags": []
+}

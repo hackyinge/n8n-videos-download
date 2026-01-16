@@ -1,0 +1,54 @@
+{
+  "name": "抖音视频下载",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "a56ea72d-810a-4cef-91e0-270d486e289c",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "command": "curl -v -X 'GET' \\\n  'http://localhost:9247/api/download?url=https%3A%2F%2Fwww.douyin.com%2Fvideo%2F7561764434223385902&prefix=true&with_watermark=false' \\\n  -H 'accept: application/json' \\\n  2>&1 | head -20\n"
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        208,
+        0
+      ],
+      "id": "56d61fd2-e7c7-4bd9-ba2f-7806b8a2cdcb",
+      "name": "下载抖音视频"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "下载抖音视频",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": false
+  },
+  "versionId": "9118c5b0-ab72-4c94-96f0-e50653564bec",
+  "meta": {
+    "instanceId": "9e2aeebdfe96cc8092c91859ed8c0bcd24b688d8bb3df8ce764fcd977fe2a4b3"
+  },
+  "id": "CYbZPiNq6I6kUNQA",
+  "tags": []
+}
